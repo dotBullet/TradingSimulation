@@ -1,17 +1,31 @@
 package com.myexchange.tradingsimulation;
 
 public class ConcreteOrder extends Order {
-    public ConcreteOrder(double price, int volume, Side side) {
-        super(price, volume, side);
+    private int quantity;
+    private double price;
+
+    public ConcreteOrder(double price, int quantity, Side side) {
+        super(price, quantity, side);
+        this.quantity = quantity;
+        this.price = price;
     }
-    public void setQuantity(int quantity) {
-        super.setQuantity(quantity);
-    }
+
+
     @Override
     public int value() {
         return getVolume();
     }
+    public int getQuantity() {
+        return quantity;
+    }
 
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
+        return price;
+    }
 
     @Override
     public boolean equals(Object o) {

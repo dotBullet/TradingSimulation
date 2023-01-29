@@ -15,7 +15,7 @@ public class MatchingAlgorithmTask implements Runnable {
     public void run() {
         List<ConcreteOrder> bidOrders = new ArrayList<>();
         for (Map.Entry<Double, Integer> entry : orderBook.getBids().entrySet()) {
-            bidOrders.add(new ConcreteOrder(entry.getKey(), entry.getValue(), Order.Side.BID));
+            bidOrders.add(new ConcreteOrder( entry.getKey(), entry.getValue(), Order.Side.BID));
         }
 
         List<ConcreteOrder> askOrders = new ArrayList<>();
